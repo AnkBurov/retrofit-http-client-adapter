@@ -1,6 +1,6 @@
 # Retrofit Java 11 Http Client adapter
-[ ![Download](https://api.bintray.com/packages/ankburov/maven/retrofit-http-client-adapter/images/download.svg) ](https://bintray.com/ankburov/maven/retrofit-http-client-adapter/_latestVersion)
-[ ![CircleCI](https://circleci.com/gh/AnkBurov/retrofit-http-client-adapter/tree/master.svg?style=shield) ](https://circleci.com/gh/AnkBurov/retrofit-http-client-adapter/tree/master) 
+[![Download](https://api.bintray.com/packages/ankburov/maven/retrofit-http-client-adapter/images/download.svg) ](https://bintray.com/ankburov/maven/retrofit-http-client-adapter/_latestVersion)
+[![Build Status](https://travis-ci.org/AnkBurov/retrofit-http-client-adapter.svg?branch=master)](https://travis-ci.org/AnkBurov/retrofit-http-client-adapter)
 
 An adapter between Retrofit and asynchronous non-blocking Java 11 Http Client. 
 
