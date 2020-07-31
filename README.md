@@ -95,5 +95,5 @@ public class CallMetricsInterceptor implements Interceptor {
 ``` 
 
 ```java
-callFactory.addInterceptor(CallMetricsInterceptor)
+callFactory.addInterceptor(new CallMetricsInterceptor())
 ```
