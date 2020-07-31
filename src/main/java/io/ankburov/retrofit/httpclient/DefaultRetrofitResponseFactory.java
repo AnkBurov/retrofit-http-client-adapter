@@ -60,7 +60,7 @@ public class DefaultRetrofitResponseFactory implements RetrofitResponseFactory {
                 });
     
         response.headers().map()
-                .forEach((key, values) -> values.forEach(value -> responseBuilder.header(key, value)));
+                .forEach((key, values) -> values.forEach(value -> responseBuilder.addHeader(key, value)));
     
         return responseBuilder.build();
     }

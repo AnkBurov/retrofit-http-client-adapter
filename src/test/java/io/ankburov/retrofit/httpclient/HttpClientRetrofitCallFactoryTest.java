@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.net.ConnectException;
 import java.net.http.HttpClient;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.stream.Stream;
 
 import org.apache.commons.io.IOUtils;
@@ -276,6 +277,28 @@ public class HttpClientRetrofitCallFactoryTest {
         assertTrue(response.isSuccessful());
     
         wireMock.verify(postRequestedFor(urlEqualTo("/rest/post")));
+    }
+    
+    @Test
+    public void testHeadersWithManyValues() throws IOException {
+        TestRetrofitAdapter retrofitAdapter = createRetrofitAdapter();
+    
+        wireMock.stubFor(post("/rest/post")
+                .withHeader("custom", equalTo("value"))
+                .withHeader("custom", equalTo("another"))
+                .willReturn(
+                        aResponse()
+                                .withHeader("Set-Cookie", "one")
+                                .withHeader("Set-Cookie", "two")
+                ));
+    
+        Response<Void> response = retrofitAdapter.postWithHeaders().execute();
+    
+        assertTrue(response.isSuccessful());
+    
+        List<String> headerValues = response.headers().toMultimap().get("Set-Cookie");
+        assertTrue(headerValues.contains("one"));
+        assertTrue(headerValues.contains("two"));
     }
     
     private TestRetrofitAdapter createRetrofitAdapter(Interceptor... interceptors) {

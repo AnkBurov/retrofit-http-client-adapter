@@ -25,6 +25,10 @@ public interface TestRetrofitAdapter {
     Call<Void> post();
     
     @POST("rest/post")
+    @Headers({"custom: value", "custom: another"})
+    Call<Void> postWithHeaders();
+    
+    @POST("rest/post")
     CompletableFuture<Response<Void>> postAsync();
     
     @Headers({"custom: value"})
