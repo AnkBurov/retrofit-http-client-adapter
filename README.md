@@ -8,7 +8,7 @@ With Retrofit by default OkHttp client is used under the hood as an HTTP client 
 which is a great library, but it has one major flaw - under the hood OkHttp uses blocking IO
 even for async calls (Dispatcher creates a worker thread per each network call). 
 It's acceptable for Android applications where a number of background threads usually is not
-too big, but for Java web server applications a thread per each network call sometimes
+too big, but for Java web server applications a thread per each network call sometimes is
 a major no-go.
 
 The adapter solves the problem by bringing to Retrofit support of fully asynchronous 
