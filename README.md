@@ -22,7 +22,9 @@ into Retrofit architecture - Retrofit features like converter or call adapter fa
 
 ```groovy
 repositories {
-    jcenter()
+    maven {
+        url  "https://dl.bintray.com/ankburov/maven"
+    }
 }
 
 dependencies {
